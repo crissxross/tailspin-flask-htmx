@@ -1,12 +1,13 @@
 # Recreating Tailspin notes
 
-JSON data for all the segments (or fragments) of the story, containing:
+NOTE: the final 2 fragments should ALWAYS be g35 & a21
+
+YAML data for all the segments (or fragments) of the story, containing:
 
 - id
 - animation (optional)
 - audio list (optional)
-- character ?? (George or Karen)
-- scene number ??
+
 
 Online YAML parser - http://yaml-online-parser.appspot.com/
 

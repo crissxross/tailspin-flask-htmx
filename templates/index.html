@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    <p>{{ content }} (index.html)</p>
+    <hr>
+    <div>
+      <a href="{{ url_for('scene1')}}">Scene 1</a>
+    </div>
+
+{% endblock %}
+

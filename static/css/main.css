@@ -1,0 +1,131 @@
+@import 'reset.css';
+@import 'variables.css';
+
+/* ************ GLOBAL / ELEMENTS ************* */
+
+/* Full-screen container with header & footer technique using html & body from Temani Afif - https://verpex.com/blog/website-tips/modern-layouts-using-css-grid */
+html {
+  display: grid;
+	min-height: 100%;
+	/* background: var(--surface-1);
+	color: var(--text-1); */
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  font-family: var(--ff-system);
+}
+
+main {
+  padding: var(--space-m);
+  /* outline: solid 1px yellowgreen; */
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* ************ BLOCKS / COMPONENTS ************* */
+
+/* e.g. button */
+
+
+/* ************ COMPOSITIONS ************* */
+
+/* AUTO GRID
+Related Every Layout: https://every-layout.dev/layouts/grid/
+More info on the flexible nature: https://piccalil.li/tutorial/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid/
+A flexible layout that will create an auto-fill grid with
+configurable grid item sizes
+
+CUSTOM PROPERTIES AND CONFIGURATION
+--gutter (var(--space-s-m)): This defines the space
+between each item.
+
+--grid-min-item-size (14rem): How large each item should be
+ideally, as a minimum.
+
+--grid-placement (auto-fill): Set either auto-fit or auto-fill
+to change how empty grid tracks are handled */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    var(--grid-placement, auto-fill),
+    minmax(var(--grid-min-item-size, 16rem), 1fr)
+  );
+  gap: var(--gutter, var(--space-s-l));
+}
+
+.grid[data-layout='50-50'] {
+  --grid-placement: auto-fit;
+  --grid-min-item-size: clamp(16rem, 50vw, 26rem);
+}
+
+/*
+REPEL
+A little layout that pushes items away from each other where
+there is space in the viewport and stacks on small viewports
+
+CUSTOM PROPERTIES AND CONFIGURATION
+--gutter (var(--space-s-m)): This defines the space
+between each item.
+
+--repel-vertical-alignment How items should align vertically.
+Can be any acceptable flexbox alignment value.
+*/
+.repel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: var(--repel-vertical-alignment, center);
+  gap: var(--gutter, var(--space-s-l));
+}
+
+.repel[data-nowrap] {
+  flex-wrap: nowrap;
+}
+
+
+/* *************** UTILITIES **************** */
+/* Utilities always come last */
+
+/*
+FLOW UTILITY
+Like the Every Layout stack: https://every-layout.dev/layouts/stack/
+Info about this implementation: https://piccalil.li/quick-tip/flow-utility/
+*/
+/* TODO: do I need .flow ??? */
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+/**
+ * WRAPPER
+ * Sets a max width, adds a consistent gutter and horizontally
+ * centers the contents
+ * Info: https://piccalil.li/quick-tip/use-css-clamp-to-create-a-more-flexible-wrapper-utility/
+ */
+ .wrapper {
+  max-width: var(--wrapper-max-width, 85rem);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  position: relative;
+}
+
+/*
+VISUALLY HIDDEN UTILITY for ACCESSIBILITY
+Info: https://piccalil.li/quick-tip/visually-hidden/
+*/
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}

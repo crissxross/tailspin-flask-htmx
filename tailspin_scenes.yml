@@ -1,7 +1,7 @@
 ---
 # SCENES - George & Alison's texts
 
-# scene 0
+# scene 0 ---------------------------------------
 - g1:
     text: |
       He shouts.
@@ -40,7 +40,7 @@
       …and she was quiet as a mouse.
 
 
-# scene 1
+# scene 1 ---------------------------------------
 - g6:
     text: |
       He's told them, anything can set it off - loud noises, high-pitched, piercing noises… alarms
@@ -86,7 +86,7 @@
       War films - out of all the films for grownups, they're her favourites. She likes musicals too, but war films, the ones with fighter planes, like what Daddy did, are best. She watches them on the telly in winter, lying on the rug in front of the crackling fire.
 
 
-# scene 2
+# scene 2 ---------------------------------------
 - g11:
     text: |
       He's running, running to the burning plane
@@ -129,7 +129,7 @@
       Stop playing silly buggers! Daddy shouts at her.
 
 
-# scene 3
+# scene 3 ---------------------------------------
 - g16:
     text: |
       Try to keep a lid on it. Keep it buttoned. He eats the Sunday roast without tasting it.
@@ -173,7 +173,7 @@
       But her favourite wartime stories are the funny ones, like his heroic battle against bedbugs in some hot sandy country.
 
 
-# scene 4
+# scene 4 ---------------------------------------
 - g21:
     text: |
       They'd complain if he started reading his book now… World War II biographies - RAF are his favourite, of course - and autobiographies, he prefers them… It's a miracle they lived to tell the tale. He's read them all. He's read them all.
@@ -214,7 +214,7 @@
       She's bored. Can't see a thing through Daddy's binoculars, just blank sky. What's there to see anyway? Just birds flying around. They don't do anything… but fly. It's boring.
 
 
-# scene 5
+# scene 5 ---------------------------------------
 - g26:
     text: |
       He tells them about the book he's reading on the Battle of Britain. They listen for a while…
@@ -264,7 +264,7 @@
       Daddy was a hero.
 
 
-# scene 6
+# scene 6 ---------------------------------------
 - g31:
     text: |
       Perfect soundless flight

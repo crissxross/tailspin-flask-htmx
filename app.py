@@ -14,16 +14,20 @@ def index():
     return render_template("index.html", title=title, content=content)
 
 
-@app.route("/scene1")
-def scene1():
-    # print(fragments[0])
-    length = len(fragments[0])
-    keys = list(fragments[0].keys())
-    return render_template("scene1.html", keys=keys, length=length)
+@app.route("/<int:scene_id>/")
+def scene(scene_id):
+    length = len(fragments[scene_id])
+    keys = list(fragments[scene_id].keys())
+    next_scene = scene_id + 1
+
+    return render_template(
+        "scene.html", scene_id=scene_id, keys=keys, length=length, next_scene=next_scene
+    )
 
 
-@app.route("/scene1/<string:frag_id>")
-def sc1_frag(frag_id):
-    text = fragments[0][frag_id]["text"]
+@app.route("/<int:scene_id>/<string:frag_id>")
+def sc_frag(scene_id, frag_id):
+    text = fragments[scene_id][frag_id]["text"]
     lines = text.split("\n")
-    return render_template("sc1_frag.html", lines=lines)
+
+    return render_template("sc_frag.html", lines=lines)

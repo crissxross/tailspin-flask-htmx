@@ -31,4 +31,9 @@ def scene(scene_id):
 def sc_frag(scene_id, frag_id):
     text = fragments[scene_id][frag_id]["text"]
     lines = text.split("\n")
-    return render_template("sc_frag.html", lines=lines)
+    return render_template("sc_frag.html", lines=lines, frag_id=frag_id)
+
+
+@app.route("/remove/<string:frag_id>")
+def remove(frag_id):
+    return f"{frag_id} gone"

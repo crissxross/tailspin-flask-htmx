@@ -1,5 +1,11 @@
-<div class="fragment">
-  {% for line in lines %}
-    <p> {{ line }} </p>
-  {% endfor %}
+<!-- <div class="fragment" remove-me="3s"> -->
+<div class="fragment" id="{{frag_id}}">
+  <div class="flow">
+    {% for line in lines %}
+      <p> {{ line }} </p>
+    {% endfor %}
+  </div>
+  <button hx-get="/remove/{{frag_id}}" hx-swap="outerHTML" hx-target="#{{frag_id}}"><span class="visually-hidden">close</span>
+    X
+  </button>
 </div>

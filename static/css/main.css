@@ -18,7 +18,7 @@ body {
 }
 
 main {
-  /* display: grid; */
+  display: grid;
   padding: var(--space-m);
   /* outline: solid 1px yellowgreen; */
 }
@@ -61,6 +61,27 @@ button {
   background-color: hsl(0 0% 80%);
 }
 
+.fragment {
+  display: flex;
+  flex-direction: column;
+  --flow-space: 0.5em;
+  /* outline: solid 1px red; */
+}
+
+.fragment button {
+  align-self: flex-end;
+}
+
+.scene-container {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: var(--space-s);
+  /* outline: solid 1px green; */
+}
+
+.scene-container .next {
+  justify-self: end;
+}
 
 /* ************ COMPOSITIONS ************* */
 

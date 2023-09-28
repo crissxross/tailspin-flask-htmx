@@ -18,8 +18,28 @@ body {
 }
 
 main {
+  /* display: grid; */
   padding: var(--space-m);
   /* outline: solid 1px yellowgreen; */
+}
+
+header {
+  padding: var(--space-xs);
+  outline: solid 1px turquoise;
+}
+
+nav {
+  display: flex;
+  gap: var(--space-xs);
+  justify-content: space-between;
+  align-items: baseline;
+  /* outline: solid 1px orange; */
+}
+
+footer {
+  padding: var(--space-xs);
+  text-align: center;
+  outline: solid 1px pink;
 }
 
 button {
@@ -29,7 +49,17 @@ button {
 
 /* ************ BLOCKS / COMPONENTS ************* */
 
-/* e.g. button */
+.button {
+  display: flex;
+  gap: 0.3em;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625em 1.25em;
+  border-radius: 0.25em;
+  text-decoration: none;
+  color: inherit;
+  background-color: hsl(0 0% 80%);
+}
 
 
 /* ************ COMPOSITIONS ************* */

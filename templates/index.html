@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
 
+{% block title %} {{ title }} {% endblock %}
+
 {% block content %}
     <h1>{{ title }}</h1>
-    <p>{{ content }} (index.html)</p>
-    <hr>
     <div>
-      <a href="{{ url_for('scene', scene_id=0) }}">Start</a>
+      <p>{{ content }}</p>
+      <small>(index.html)</small>
+    </div>
+    <div>
+      <a class="button" href="{{ url_for('scene', scene_id=0) }}">Start</a>
     </div>
 
 {% endblock %}

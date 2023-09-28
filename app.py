@@ -12,7 +12,6 @@ with open("tailspin_scenes.yml", "r") as f:
 def index():
     title = "Tailspin"
     content = "This is a recreation of Tailspin, originally created in Flash."
-
     return render_template("index.html", title=title, content=content)
 
 
@@ -32,5 +31,4 @@ def scene(scene_id):
 def sc_frag(scene_id, frag_id):
     text = fragments[scene_id][frag_id]["text"]
     lines = text.split("\n")
-
     return render_template("sc_frag.html", lines=lines)

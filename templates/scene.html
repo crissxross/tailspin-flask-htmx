@@ -2,24 +2,24 @@
 
 {% block title %} Tailspin scene {{scene_id}}  {% endblock %}
 
+{% block header %} Scene {{scene_id}} <small>({{ length }} fragments)</small> {% endblock %}
+
 {% block content %}
 
-  <p>Scene {{scene_id}} <small>({{ length }} fragments)</small> </p>
-  <hr>
-
-
-  {% for key in keys %}
-    <button hx-get="/{{ scene_id }}/{{ key }}"
-            hx-target="#{{ key }}">
-      {{ key }}
-    </button>
-    <div id="{{ key }}"></div>
-  {% endfor %}
-
-  <hr>
+  <div class="grid">
+    {% for key in keys %}
+    <div class="fragment">
+      <button hx-get="/{{ scene_id }}/{{ key }}"
+              hx-target="#{{ key }}">
+        {{ key }}
+      </button>
+      <div id="{{ key }}"></div>
+    </div>
+    {% endfor %}
+  </div>
 
   {% if scene_id < 6 %}
-    <p><a href="{{ url_for('scene', scene_id=next_scene)}}">Next scene {{next_scene}} </a></p>
+    <p><a href="{{ url_for('scene', scene_id=next_scene)}}">Next scene: {{next_scene}} </a></p>
   {% else %}
     <p>End</p>
   {% endif %}

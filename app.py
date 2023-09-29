@@ -21,7 +21,6 @@ def scene(scene_id):
     next_scene = scene_id + 1
     keys = list(fragments[scene_id].keys())
     shuffle(keys)
-    # print(keys)
     return render_template(
         "scene.html", scene_id=scene_id, keys=keys, length=length, next_scene=next_scene
     )

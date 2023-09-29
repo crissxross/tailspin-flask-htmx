@@ -1,15 +1,10 @@
 <div class="fragment" id="{{frag_id}}" x-data="{open: true}">
-  <div class="flow" x-show="open"
-    x-transition.duration.300ms>
+  <div class="flow" x-show="open" @click.outside="open = false" x-transition.duration.300ms>
     {% for line in lines %}
       <p> {{ line }} </p>
     {% endfor %}
   </div>
-  <button x-on:click="open = !open"><span class="visually-hidden">close</span>
+  <button @:click="open = !open"><span class="visually-hidden">close</span>
     {{frag_id}} X
   </button>
 </div>
-
-<!-- <button hx-get="/remove/{{frag_id}}" hx-swap="outerHTML" hx-target="#{{frag_id}}"><span class="visually-hidden">close</span>
-  X
-</button> -->

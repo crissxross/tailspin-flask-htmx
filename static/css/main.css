@@ -41,9 +41,16 @@ footer {
   text-align: center;
   outline: solid 1px pink;
 }
-
-button {
-  cursor: pointer;
+/* TODO: do I need type="image" ?? */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"],
+[type="image"],
+[type="checkbox"],
+[type="radio"],
+summary {
+	cursor: pointer;
 }
 
 
@@ -69,7 +76,7 @@ button {
 }
 
 .fragment button {
-  align-self: flex-end;
+  align-self: center;
 }
 
 .scene-container {
@@ -82,6 +89,40 @@ button {
 .scene-container .next {
   justify-self: end;
 }
+
+.scene-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: var(--space-s);
+  /* outline: solid 1px blue; */
+}
+
+.fragwrap {
+  display: grid;
+  place-content: center;
+  /* background-color: hsl(0 0% 95%); */
+  outline: solid 1px hsl(0 0% 95%);
+}
+
+.fragwrap:nth-of-type(5) {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  /* outline: solid 1px purple; */
+}
+.fragwrap:nth-of-type(6) {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+.fragwrap:nth-of-type(7) {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+.fragwrap:nth-of-type(8) {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+}
+
 
 /* ************ COMPOSITIONS ************* */
 

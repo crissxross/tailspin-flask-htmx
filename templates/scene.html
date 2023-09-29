@@ -8,14 +8,12 @@
 
 <div class="scene-container">
 
-  <div class="grid" hx-ext="remove-me">
+  <div class="scene-grid">
     {% for key in keys %}
     <div class="fragwrap">
       <button hx-get="/{{ scene_id }}/{{ key }}" hx-swap="outerHTML">
-      <!-- <button hx-get="/{{ scene_id }}/{{ key }}" hx-target="#frag-{{ key }}"> -->
         {{ key }}
       </button>
-      <div id="frag-{{ key }}"></div>
     </div>
     {% endfor %}
   </div>

@@ -12,17 +12,27 @@ with open("tailspin_scenes.yml", "r") as f:
 def index():
     title = "Tailspin"
     content = "This is a recreation of Tailspin, originally created in Flash."
-    return render_template("index.html", title=title, content=content)
+    return render_template(
+        "index.html",
+        title=title,
+        content=content,
+    )
 
 
 @app.route("/<int:scene_id>/")
 def scene(scene_id):
+    title = "Tailspin scene " + str(scene_id)
     length = len(fragments[scene_id])
     next_scene = scene_id + 1
     keys = list(fragments[scene_id].keys())
     shuffle(keys)
     return render_template(
-        "scene.html", scene_id=scene_id, keys=keys, length=length, next_scene=next_scene
+        "scene.html",
+        title=title,
+        scene_id=scene_id,
+        keys=keys,
+        length=length,
+        next_scene=next_scene,
     )
 
 
@@ -30,7 +40,11 @@ def scene(scene_id):
 def sc_frag(scene_id, frag_id):
     text = fragments[scene_id][frag_id]["text"]
     lines = text.split("\n")
-    return render_template("sc_frag.html", lines=lines, frag_id=frag_id)
+    return render_template(
+        "sc_frag.html",
+        lines=lines,
+        frag_id=frag_id,
+    )
 
 
 @app.route("/remove/<string:frag_id>")

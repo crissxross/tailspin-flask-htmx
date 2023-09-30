@@ -9,18 +9,9 @@
   <!-- TODO: in PRODUCTION, change to hardcode latest version in CDN link -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-  <body>
-    <header>
-      <nav>
-        <a href="{{ url_for('index')}}">Home</a>
-        {% block header %} {% endblock %}
-      </nav>
-    </header>
-    <main>
-      {% block content %} {% endblock %}
-    </main>
-    <footer>
-      <p>Created with <a href="https://htmx.org/">htmx</a> and <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a> by Christine Wilks &copy 2023</p>
-    </footer>
+  <body hx-boost="true">
+
+    {% block body %} {% endblock %}
+
   </body>
 </html>

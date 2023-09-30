@@ -17,12 +17,18 @@ def index():
 
 @app.route("/<int:scene_id>/")
 def scene(scene_id):
+    title = "Tailspin scene " + str(scene_id)
     length = len(fragments[scene_id])
     next_scene = scene_id + 1
     keys = list(fragments[scene_id].keys())
     shuffle(keys)
     return render_template(
-        "scene.html", scene_id=scene_id, keys=keys, length=length, next_scene=next_scene
+        "scene.html",
+        scene_id=scene_id,
+        keys=keys,
+        length=length,
+        next_scene=next_scene,
+        title=title,
     )
 
 
@@ -31,8 +37,3 @@ def sc_frag(scene_id, frag_id):
     text = fragments[scene_id][frag_id]["text"]
     lines = text.split("\n")
     return render_template("sc_frag.html", lines=lines, frag_id=frag_id)
-
-
-@app.route("/remove/<string:frag_id>")
-def remove(frag_id):
-    return f"{frag_id} gone"

@@ -21,7 +21,7 @@ def index():
 
 @app.route("/<int:scene_id>/")
 def scene(scene_id):
-    title = "Tailspin scene " + str(scene_id)
+    title = "Tailspin scene " + str(scene_id + 1)
     length = len(fragments[scene_id])
     next_scene = scene_id + 1
     keys = list(fragments[scene_id].keys())

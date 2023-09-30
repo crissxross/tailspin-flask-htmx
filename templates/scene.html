@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block header %} Scene {{scene_id}} <small>({{ length }} fragments)</small> {% endblock %}
+{% block header %} Scene {{scene_id + 1}} <small>({{ length }} fragments)</small> {% endblock %}
 
 {% block content %}
 
@@ -17,7 +17,7 @@
   </div>
 
   {% if scene_id < 6 %}
-    <p class="next"><a href="{{ url_for('scene', scene_id=next_scene)}}">Next scene: {{next_scene}} </a></p>
+    <p class="next"><a href="{{ url_for('scene', scene_id=next_scene)}}">Next scene: {{next_scene + 1}} </a></p>
   {% else %}
     <p class="next">End</p>
   {% endif %}

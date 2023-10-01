@@ -20,7 +20,14 @@
   </div>
 
   {% if scene_id < 6 %}
-    <p class="next"><a href="{{ url_for('scene', scene_id=next_scene)}}">Next scene: {{next_scene + 1}} </a></p>
+    <p class="next"><button
+        hx-get="/{{ next_scene }}/"
+        hx-push-url="true"
+        hx-swap="outerHTML"
+        hx-target="#body"
+      >
+      Next scene: {{next_scene + 1}}
+    </button></p>
   {% else %}
     <p class="next">End</p>
   {% endif %}

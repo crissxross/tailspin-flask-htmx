@@ -21,7 +21,8 @@ def index():
 
 @app.route("/<int:scene_id>/")
 def scene(scene_id):
-    title = "Tailspin scene " + str(scene_id + 1)
+    # scene_id + 1 here for UI display because scene_id starts at 0
+    title = f"Tailspin scene str(scene_id + 1)"
     length = len(fragments[scene_id])
     next_scene = scene_id + 1
     keys = list(fragments[scene_id].keys())
@@ -45,8 +46,3 @@ def sc_frag(scene_id, frag_id):
         lines=lines,
         frag_id=frag_id,
     )
-
-
-@app.route("/remove/<string:frag_id>")
-def remove(frag_id):
-    return f"{frag_id} gone"

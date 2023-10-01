@@ -5,7 +5,14 @@
 {% block content %}
 <div class="home flow all-center">
   <h1>{{ title }}</h1>
-  <a class="button" href="{{ url_for('scene', scene_id=0) }}">Start</a>
+  <button class="button"
+    hx-get="/0/"
+    hx-push-url="true"
+    hx-swap="outerHTML"
+    hx-target="#body"
+  >
+    Start
+  </button>
   <div>
     <p>{{ content }}</p>
   </div>

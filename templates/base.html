@@ -13,7 +13,8 @@
 
     <header>
       <nav>
-        <a href="{{ url_for('index')}}">Home</a>
+        <!-- TODO: should I use hx-get here too ?? -->
+        <a href="{{ url_for('index') }}">Home</a>
         {% block header %} {% endblock %}
       </nav>
     </header>

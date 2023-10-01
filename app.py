@@ -23,7 +23,7 @@ def index():
 def scene(scene_id):
     # scene_id + 1 here for UI display because scene_id starts at 0
     title = f"Tailspin scene str(scene_id + 1)"
-    length = len(fragments[scene_id])
+    num_frags = len(fragments[scene_id])
     next_scene = scene_id + 1
     keys = list(fragments[scene_id].keys())
     shuffle(keys)
@@ -32,7 +32,7 @@ def scene(scene_id):
         title=title,
         scene_id=scene_id,
         keys=keys,
-        length=length,
+        num_frags=num_frags,
         next_scene=next_scene,
     )
 

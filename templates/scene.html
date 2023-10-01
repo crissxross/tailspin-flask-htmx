@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
-{% block header %} Scene {{scene_id + 1}} <small>({{ length }} fragments)</small> {% endblock %}
+{% block header %} Scene {{scene_id + 1}} <small>({{ num_frags }} fragments)</small> {% endblock %}
 
 {% block content %}
 
-<div class="scene-container">
+<div class="scene-container" x-data="{count: 0}">
 
   <div class="scene-grid">
     {% for key in keys %}
@@ -12,6 +12,7 @@
       <button class="frag-btn"
         hx-get="/{{ scene_id }}/{{ key }}"
         hx-swap="outerHTML"
+        @click="count++"
       >
         {{ key }}
       </button>
@@ -19,18 +20,24 @@
     {% endfor %}
   </div>
 
-  {% if scene_id < 6 %}
-    <p class="next"><button
-        hx-get="/{{ next_scene }}/"
-        hx-push-url="true"
-        hx-swap="outerHTML"
-        hx-target="#body"
-      >
-      Next scene: {{next_scene + 1}}
-    </button></p>
-  {% else %}
-    <p class="next">End</p>
-  {% endif %}
+  <div class="next"
+    x-show="count == {{ num_frags }}"
+    x-transition.opacity
+    x-transition.duration.500ms
+  >
+    {% if scene_id < 6 %}
+      <p><button
+          hx-get="/{{ next_scene }}/"
+          hx-push-url="true"
+          hx-swap="outerHTML"
+          hx-target="#body"
+        >
+        Next scene: {{next_scene + 1}}
+      </button></p>
+    {% else %}
+      <p>End</p>
+    {% endif %}
+  </div>
 
 </div>
 

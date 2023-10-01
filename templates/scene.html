@@ -8,8 +8,11 @@
 
   <div class="scene-grid">
     {% for key in keys %}
-    <div class="fragwrap">
-      <button hx-get="/{{ scene_id }}/{{ key }}" hx-swap="outerHTML">
+    <div class="fragwrap" id="{{ key }}">
+      <button class="frag-btn"
+        hx-get="/{{ scene_id }}/{{ key }}"
+        hx-swap="outerHTML"
+      >
         {{ key }}
       </button>
     </div>

@@ -56,6 +56,16 @@ summary {
 
 /* ************ BLOCKS / COMPONENTS ************* */
 
+.home {
+  --flow-space: var(--space-xl);
+  display: grid;
+  place-content: center;
+
+  & h1 {
+    font-size: var(--step-6);
+  }
+}
+
 .button {
   display: flex;
   gap: 0.3em;
@@ -102,7 +112,7 @@ summary {
   display: grid;
   place-content: center;
   /* background-color: hsl(0 0% 95%); */
-  outline: solid 1px hsl(0 0% 95%);
+  /* outline: solid 1px hsl(0 0% 95%); */
 }
 
 .fragwrap:nth-of-type(5) {
@@ -121,6 +131,27 @@ summary {
 .fragwrap:nth-of-type(8) {
   grid-column: 3 / 4;
   grid-row: 3 / 4;
+}
+
+.fade-in.htmx-added {
+  opacity: 0;
+}
+.fade-in {
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+
+.frag-btn {
+  padding: 0.625em 1em;
+  background-color: hsl(220 41% 78% / 0.25);
+  border-radius: 50%;
+  border: none;
+}
+.visited-btn {
+  color: hsl(0 0% 30%);
+  padding: 0.5em 0.8em;
+  font-size: var(--step--1);
+  background-color: hsl(274 41% 78% / 0.25);
 }
 
 
@@ -182,6 +213,14 @@ Can be any acceptable flexbox alignment value.
 
 /* *************** UTILITIES **************** */
 /* Utilities always come last */
+
+ /* ALL CENTER UTILITY */
+ /* Info: https://web.dev/design-system/css-utilities/#all-center */
+ .all-center > * {
+  text-align: center;
+  margin-inline: auto;
+}
+
 
 /*
 FLOW UTILITY

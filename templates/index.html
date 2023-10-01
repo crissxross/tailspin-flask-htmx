@@ -3,14 +3,13 @@
 {% block header %} {{ title }} {% endblock %}
 
 {% block content %}
-    <h1>{{ title }}</h1>
-    <div>
-      <p>{{ content }}</p>
-      <small>(index.html)</small>
-    </div>
-    <div>
-      <a class="button" href="{{ url_for('scene', scene_id=0) }}">Start</a>
-    </div>
+<div class="home flow all-center">
+  <h1>{{ title }}</h1>
+  <a class="button" href="{{ url_for('scene', scene_id=0) }}">Start</a>
+  <div>
+    <p>{{ content }}</p>
+  </div>
+</div>
 
 {% endblock %}
 

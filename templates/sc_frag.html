@@ -1,10 +1,26 @@
-<div class="fragment" id="{{frag_id}}" x-data="{open: true}">
-  <div class="flow" x-show="open" @click.outside="open = false" x-transition.duration.300ms>
+<div class="fragment fade-in" id="{{frag_id}}"
+  x-data="{open: true, show: false}"
+>
+  <div class="flow"
+    x-show="open"
+    @click.outside="open = false, show = true"
+    x-transition.opacity
+    x-transition.duration.500ms
+  >
     {% for line in lines %}
       <p> {{ line }} </p>
     {% endfor %}
   </div>
-  <button @click="open = !open"><span class="visually-hidden">close</span>
-    {{frag_id}} X
+
+  <button class="frag-btn visited-btn"
+    @click="open = !open"
+    x-show="show"
+    x-transition.opacity
+    x-transition.duration.1000ms
+    x-transition.delay.600ms
+  >
+    <span class="visually-hidden">toggle</span>
+    {{frag_id}}
   </button>
+
 </div>

@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
 
-{% block header %} Scene {{scene_id + 1}} <small>({{ num_frags }} fragments)</small> {% endblock %}
+{% block header %} Scene {{scene_id + 1}} {% endblock %}
 
 {% block content %}
 
 <div class="scene-container" x-data="{count: 0}">
 
   <div class="scene-grid">
-    {% for key in keys %}
-    <div class="fragwrap" id="{{ key }}">
+    {% for frag_key in frag_keys %}
+    <div class="fragwrap" id="{{ frag_key }}">
       <button class="frag-btn"
-        hx-get="/{{ scene_id }}/{{ key }}"
+        hx-get="/{{ scene_id }}/{{ frag_key }}"
         hx-swap="outerHTML"
         @click="count++"
       >
-        {{ key }}
+        {{ frag_key }}
       </button>
     </div>
     {% endfor %}

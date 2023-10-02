@@ -1,5 +1,8 @@
 @import 'reset.css';
 @import 'variables.css';
+@import 'decorative.css';
+
+/* TODO: check if imports harm performance */
 
 /* ************ GLOBAL / ELEMENTS ************* */
 
@@ -7,8 +10,8 @@
 html {
   display: grid;
 	min-height: 100%;
-	/* background: var(--surface-1);
-	color: var(--text-1); */
+	/* color: var(--text-1); */
+	/* background: var(--surface-1); */
 }
 
 body {
@@ -25,7 +28,6 @@ main {
 
 header {
   padding: var(--space-xs);
-  outline: solid 1px turquoise;
 }
 
 nav {
@@ -37,10 +39,15 @@ nav {
 }
 
 footer {
-  padding: var(--space-xs);
+  font-size: var(--step--1);
   text-align: center;
-  outline: solid 1px pink;
+  padding: var(--space-xs);
 }
+
+header, footer {
+  background-color: hsl(235 20% 50% / 0.1);
+}
+
 /* TODO: do I need type="image" ?? */
 button,
 [type="button"],

@@ -22,16 +22,16 @@ def index():
 @app.route("/<int:scene_id>/")
 def scene(scene_id):
     # scene_id + 1 here for UI display because scene_id starts at 0
-    title = f"Tailspin scene str(scene_id + 1)"
+    title = f"Tailspin scene {str(scene_id + 1)}"
+    frag_keys = list(fragments[scene_id].keys())
+    shuffle(frag_keys)
     num_frags = len(fragments[scene_id])
     next_scene = scene_id + 1
-    keys = list(fragments[scene_id].keys())
-    shuffle(keys)
     return render_template(
         "scene.html",
         title=title,
         scene_id=scene_id,
-        keys=keys,
+        frag_keys=frag_keys,
         num_frags=num_frags,
         next_scene=next_scene,
     )

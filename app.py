@@ -46,3 +46,8 @@ def sc_frag(scene_id, frag_id):
         lines=lines,
         frag_id=frag_id,
     )
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("404.html"), 404

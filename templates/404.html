@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+<div class="flow all-center">
+  <h1>Oops!</h1>
+  <p>Sorry, the page you're looking for was not found.</p>
+  <p>Try going to the <b><a href="{{ url_for('index') }}">home</a></b> page and start from there.</p>
+</div>
+{% endblock %}
